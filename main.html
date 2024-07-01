@@ -7,8 +7,25 @@
     <link rel="shortcut icon" href="images/icon.png" type="image/x-icon">
     <title>Weatherly</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+        <!-- Header section-->
+    <div class="header">
+        <div class="main-header">
+            <div class="logo">
+                <img src="images/icon.png" alt="MS Logo">
+            </div>
+            <div class="nav">
+                <a href="main.html">MAIN SECTION</a>
+                <a href="#about-us">ABOUT US</a>
+                <a href="#">SERVICES</a>
+                <a href="./contact.html">CONTACT</a>
+            </div>
+        </div>
+    </div>
+      
+         <!-- / Header section-->
     <div class="card">
         <div class="search">
             <input type="text" placeholder="enter city name" spellcheck="false">
@@ -40,6 +57,58 @@
             </div>
         </div>
     </div>
+    <div id="about-us" class="aboutus">
+        <h1>Meet the Team</h1>
+
+        <div class="container">
+            <div class="team-member">
+                <img src="images/Me.jpg" alt="Mukhammad Ibrokhimov">
+                <div class="info">
+                    <h3>Mukhammad Ibrokhimov</h3>
+                    <p>Backend engineer</p>
+                </div>
+            </div>
+            <div class="team-member">
+                <img src="images/sambandam.png" alt="Sambandam">
+                <div class="info">
+                    <h3>Pratheesh Sambandam</h3>
+                    <p>UI Designer</p>
+                </div>
+            </div>
+            <div class="team-member">
+                <img src="images/Das.jpg" alt="Sayan Das">
+                <div class="info">
+                    <h3>Sayan Das</h3>
+                    <p>Mobile app developer</p>
+                </div>
+            </div>
+            <div class="team-member">
+                <img src="images/jenil.jpg" alt="Jenil Savaliya">
+                <div class="info">
+                    <h3>Jenil Savaliya</h3>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer" class="footer">
+        <h1>Weatherly - forecast</h1>
+        <nav>
+            <ul>
+                <a href="main.html">MAIN SECTION</a>
+                <a href="#about-us">ABOUT US</a>
+                <a href="#">SERVICES</a>
+                <a href="./contact.html">CONTACT</a>
+            </ul>
+        </nav>
+        <div class="social-links">
+            <a href="https://t.me/IbrokhimovMukhammad"><i class="fa-brands fa-telegram"></i></a>
+            <a href="https://instagram.com/ibroximov_m_"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://linkedin.com/in/ibroximov"> <i class="fa-brands fa-linkedin"></i></a>
+        </div>
+        <p>&copy; 2024 Weatherly - forecast. All Rights Reserved.</p>
+    </div>
+    
     <script>
         const apiKey = "15ba7226e758a452f3d686e47533baa3";
         const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
@@ -73,7 +142,7 @@
             }
             else if (data.weather[0].main == "Mist"){
                 weatherIcon.src = "images/mist.png";
-            }
+            } 
 
         }
         searchBtn.addEventListener("click", ()=>{
