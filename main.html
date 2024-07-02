@@ -1,21 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Character encoding for the HTML document -->
     <meta charset="UTF-8">
+    <!-- Ensures compatibility with Internet Explorer -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Sets the viewport to make the website responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon for the website -->
     <link rel="shortcut icon" href="images/icon.png" type="image/x-icon">
+    <!-- Title of the webpage -->
     <title>Weatherly</title>
+    <!-- Link to the external CSS file -->
     <link rel="stylesheet" href="style.css">
+    <!-- Link to Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-        <!-- Header section-->
+    <!-- Header section-->
     <div class="header">
         <div class="main-header">
+            <!-- Logo of the website -->
             <div class="logo">
                 <img src="images/icon.png" alt="MS Logo">
             </div>
+            <!-- Navigation links -->
             <div class="nav">
                 <a href="main.html">MAIN SECTION</a>
                 <a href="#about-us">ABOUT US</a>
@@ -24,16 +33,20 @@
             </div>
         </div>
     </div>
-      
-         <!-- / Header section-->
+    <!-- / Header section-->
+    
+    <!-- Main card containing the search and weather information -->
     <div class="card">
+        <!-- Search bar for entering city name -->
         <div class="search">
             <input type="text" placeholder="enter city name" spellcheck="false">
             <button><img src="images/search.png"></button>
         </div>
+        <!-- Error message for invalid city name -->
         <div class="error">
             <p>You have entered wrong city name, thus was displayed default information</p>
         </div>
+        <!-- Weather information display -->
         <div class="weather">
             <img src="images/rain.png" class="weather-icon">
             <h1 class="temp">22 °C</h1>
@@ -57,10 +70,12 @@
             </div>
         </div>
     </div>
+    
+    <!-- About us section -->
     <div id="about-us" class="aboutus">
         <h1>Meet the Team</h1>
-
         <div class="container">
+            <!-- Team member Mukhammad Ibrokhimov -->
             <div class="team-member">
                 <img src="images/Me.jpg" alt="Mukhammad Ibrokhimov">
                 <div class="info">
@@ -68,6 +83,7 @@
                     <p>Backend engineer</p>
                 </div>
             </div>
+            <!-- Team member Pratheesh Sambandam -->
             <div class="team-member">
                 <img src="images/sambandam.png" alt="Sambandam">
                 <div class="info">
@@ -75,6 +91,7 @@
                     <p>UI Designer</p>
                 </div>
             </div>
+            <!-- Team member Sayan Das -->
             <div class="team-member">
                 <img src="images/Das.jpg" alt="Sayan Das">
                 <div class="info">
@@ -82,6 +99,7 @@
                     <p>Mobile app developer</p>
                 </div>
             </div>
+            <!-- Team member Jenil Savaliya -->
             <div class="team-member">
                 <img src="images/jenil.jpg" alt="Jenil Savaliya">
                 <div class="info">
@@ -91,8 +109,11 @@
             </div>
         </div>
     </div>
+    
+    <!-- Footer section -->
     <div id="footer" class="footer">
         <h1>Weatherly - forecast</h1>
+        <!-- Navigation links in the footer -->
         <nav>
             <ul>
                 <a href="main.html">MAIN SECTION</a>
@@ -101,33 +122,47 @@
                 <a href="./contact.html">CONTACT</a>
             </ul>
         </nav>
+        <!-- Social media links -->
         <div class="social-links">
             <a href="https://t.me/IbrokhimovMukhammad"><i class="fa-brands fa-telegram"></i></a>
             <a href="https://instagram.com/ibroximov_m_"><i class="fa-brands fa-instagram"></i></a>
             <a href="https://linkedin.com/in/ibroximov"> <i class="fa-brands fa-linkedin"></i></a>
         </div>
+        <!-- Copyright information -->
         <p>&copy; 2024 Weatherly - forecast. All Rights Reserved.</p>
+        <p>Ibrokhimov Mukhammad</p>
     </div>
     
+    <!-- JavaScript to handle weather data fetching -->
     <script>
+        // API key for OpenWeatherMap
         const apiKey = "15ba7226e758a452f3d686e47533baa3";
+        // Base URL for the OpenWeatherMap API
         const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+        // DOM elements for search input and button
         const searchInput = document.querySelector(".search input");
-        const searchBtn = document.querySelector(".search button")
-        const weatherIcon = document.querySelector(".weather-icon")
+        const searchBtn = document.querySelector(".search button");
+        // DOM element for the weather icon
+        const weatherIcon = document.querySelector(".weather-icon");
+        
+        // Function to fetch and display weather data
         async function getWeather(city){
+            // Fetch weather data from OpenWeatherMap API
             const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
-            if (response.status == 404)
-            {
+            // Display error message if city is not found
+            if (response.status == 404) {
                 document.querySelector(".error").style.display = "block";
             }
             var data = await response.json();
             console.log(data);
 
+            // Update the DOM with fetched weather data
             document.querySelector(".city").innerHTML = data.name;
             document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°C";
             document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
             document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
+
+            // Update weather icon based on weather conditions
             if (data.weather[0].main == "Clouds"){
                 weatherIcon.src = "images/clouds.png";
             }
@@ -142,12 +177,13 @@
             }
             else if (data.weather[0].main == "Mist"){
                 weatherIcon.src = "images/mist.png";
-            } 
-
+            }
         }
-        searchBtn.addEventListener("click", ()=>{
-            getWeather(searchInput.value)
-        })
+
+        // Event listener for search button click
+        searchBtn.addEventListener("click", () => {
+            getWeather(searchInput.value);
+        });
     </script>
     
 </body>
