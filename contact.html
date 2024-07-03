@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="contact.css">
   <link rel="icon" href="images/icon.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
- 
 </head>
 <body>
   <!-- Header section-->
@@ -32,21 +31,21 @@
         <div class="section-title">
             Get in touch with us
         </div>
-        <form action="/server.php" method="get">
+        <form>
             <div class="textarea">
-                <textarea name="message" rows="10" placeholder="Text a message"></textarea>
+                <textarea id="message" name="message" rows="10" placeholder="Text a message"></textarea>
 
             </div>
            
             <div class="half-row" contact__first-name>
-                <input type="text" placeholder="Your name" name="First name">
+                <input type="text" placeholder="Your name" name="First name" id="name">
             </div>
             <div class="half-row contact__email">
                 <input type="email" name="email" id="email" placeholder="Your email">
             </div>
            
-            <input type="text" placeholder="meaning of message" name="Subjecrt">
-            <button class="button" type="submit"> Submit</button>
+            <input type="text" placeholder="Subject" name="Subject" id="Subject">
+            <button class="button" type="submit" onclick="sendMail()"> Submit</button>
         </form>
     </section>
    </div>
@@ -72,8 +71,16 @@
     </div>
 
    <!-- /Footer section-->
-
- 
-  
-</body>
+    </body>
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+    emailjs.init({
+    publicKey: "sbVJTBTbZPHv_Q_7V",
+    });
+    })();
+    </script>
+    <script src="script.js"></script>
 </html>
