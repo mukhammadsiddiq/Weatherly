@@ -4,15 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather app</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Weatherly</title>
+    <link rel="shortcut icon" href="images/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="body.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css">
 </head>
 <body>
+      <!-- Header section-->
+      <div class="first_header">
+        <div class="main-header">
+            <!-- Logo of the website -->
+            <div class="logo">
+                <img src="images/icon.png" alt="MS Logo">
+            </div>
+            <!-- Navigation links -->
+            <div class="nav">
+                <a href="index.html">MAIN SECTION</a>
+                <a href="#about-us">ABOUT US</a>
+                <a href="contact.html">CONTACT</a>
+            </div>
+        </div>
+    </div>
+    <!-- / Header section-->
     <div class="container">
         <div class="header">
-            <h2>Weather</h2>
+            <h2>
+                     
+            </h2>
             <div class="weather-input">
                 <input type="text" name="city" id="city_input" placeholder="Enter city name">
                 <button type="button" id="searchBtn">
@@ -250,7 +269,70 @@
               </div>
           </div>
     </div>
+    <!-- About us section -->
+    <div id="about-us" class="aboutus">
+      <h1 class="aboutteam">Meet the Team</h1>
+      <div class="container_aboutus">
+          <!-- Team member Mukhammad Ibrokhimov -->
+          <div class="team-member">
+              <img src="/images/Me.jpg" alt="Mukhammad Ibrokhimov">
+              <div class="info">
+                  <h3>Mukhammad Ibrokhimov</h3>
+                  <p>Backend engineer</p>
+              </div>
+          </div>
+          <!-- Team member Pratheesh Sambandam -->
+          <div class="team-member">
+              <img src="/images/sambandam.png" alt="Sambandam">
+              <div class="info">
+                  <h3>Pratheesh Sambandam</h3>
+                  <p>UI Designer</p>
+              </div>
+          </div>
+          <!-- Team member Sayan Das -->
+          <div class="team-member">
+              <img src="/images/Das.jpg" alt="Sayan Das">
+              <div class="info">
+                  <h3>Sayan Das</h3>
+                  <br>
+                  <p>Mobile app developer</p>
+              </div>
+          </div>
+          <!-- Team member Jenil Savaliya -->
+          <div class="team-member">
+              <img src="/images/jenil.jpg" alt="Jenil Savaliya">
+              <div class="info">
+                  <h3>Jenil Savaliya</h3>
+                  <p><br></p>
+                  <br>
+              </div>
+          </div>
+      </div>
+  </div>
+  
+  <!-- Footer section -->
+  <div id="footer" class="last_footer">
+      <h1 class="aboutteam">Weatherly - forecast</h1>
+      <!-- Navigation links in the footer -->
+      <nav>
+          <ul>
+              <a href="index.html">MAIN SECTION</a>
+              <a href="#about-us">ABOUT US</a>
+              <a href="#">SERVICES</a>
+              <a href="./contact.html">CONTACT</a>
+          </ul>
+      </nav>
+      <!-- Social media links -->
+      <div class="social-links">
+          <a href="https://t.me/IbrokhimovMukhammad"><i class="fa-brands fa-telegram"></i></a>
+          <a href="https://instagram.com/ibroximov_m_"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://linkedin.com/in/ibroximov"> <i class="fa-brands fa-linkedin"></i></a>
+      </div>
+      <!-- Copyright information -->
+      <p>&copy; 2024 Weatherly - forecast. All Rights Reserved.</p>
+      <p>Mukhammad Ibrokhimov</p>
+  </div>
     <script src="https://momentjs.com/downloads/moment.min.js"></script>
-    <script src="/example/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

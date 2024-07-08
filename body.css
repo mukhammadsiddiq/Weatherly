@@ -8,6 +8,48 @@
     --aqi-5: #ff5350;;
 
 }
+/*header section */
+.first_header {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ebfffc;
+  display: flex;
+  position:sticky;
+
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.logo img {
+  height: 50px;
+}
+
+.nav {
+  display: flex;
+  gap: 20px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #333;
+}
+
+.nav a:hover {
+  color: #007bff;
+}
+/*header section end */
 * {
     margin: 0; 
     padding: 0; 
@@ -25,7 +67,7 @@ hr {
   margin-bottom: 10px;
 }
 .header{
-    position: sticky;
+    position: flex;
     top: 0;
     background-color: var(--bg-color1);
     display: flex;
@@ -333,11 +375,89 @@ hr {
   }
 }
 
+/* About us && footer */
+.aboutus {
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  background-color: var(--bg-color1);;
+  margin: 0;
+}
+
+.container_aboutus {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 1500px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 0px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.team-member {
+  width: 200px;
+  margin: 0px;
+  text-align: center;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  border-radius: 0px;
+  overflow: hidden;
+  position: relative;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.team-member img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.team-member .info {
+  padding: 10px;
+  background-color: #555;
+}
+
+.team-member h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.team-member p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+  color: #fff;
+}
 
 
+.about_team {
+  margin-bottom: 10px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+}
+.last_footer {
+  background-color: #ebfffc;
+  color: #333;
+  font-family: sans-serif;
+  text-align: center;
+}
 
+.social-links {
+  margin-top: 10px;
+}
 
+.social-links a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: white;
+}
 
-
-
-
+.social-links a img {
+  width: 30px;
+  height: 30px;
+}
